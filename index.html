@@ -3,83 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+<title>Goulraj Portfolio</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
-
 body{
+  margin:0;
+  font-family:Arial;
   background:#0f172a;
   color:white;
 }
 
-/* Navbar */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
-  background:#111827;
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
-nav h2{
-  color:#38bdf8;
+header, section{
+  animation: fadeIn 1s ease-in;
 }
 
-nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
-}
-
-/* Hero */
-.hero{
+header{
   text-align:center;
-  padding:100px 20px;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#0f172a,#111827);
 }
 
-.hero h1{
-  font-size:40px;
+header h1{
+  font-size:42px;
   color:#38bdf8;
 }
 
-.hero p{
-  margin-top:10px;
+header p{
   color:#cbd5e1;
 }
 
-/* Sections */
+/* SECTION */
 section{
-  padding:60px 20px;
+  padding:50px 20px;
   text-align:center;
 }
 
-.card-container{
+h2{
+  color:#38bdf8;
+}
+
+/* SKILLS */
+.skills{
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill{
+  background:#334155;
+  padding:10px 15px;
+  border-radius:8px;
+}
+
+/* PROJECT CARDS */
+.project-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
   gap:20px;
   margin-top:20px;
 }
 
-.card{
+.project-card{
   background:#1e293b;
+  width:280px;
   padding:20px;
-  width:250px;
   border-radius:12px;
   box-shadow:0 0 10px rgba(0,0,0,0.3);
+  transition:0.3s ease;
+  transform:scale(1);
 }
 
-/* Footer */
+/* HOVER EFFECT */
+.project-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px #38bdf8;
+}
+
 footer{
-  text-align:center;
-  padding:20px;
   background:#111827;
+  text-align:center;
+  padding:15px;
   color:#94a3b8;
+}
+
+a{
+  color:#38bdf8;
+  text-decoration:none;
 }
 </style>
 
@@ -87,51 +104,51 @@ footer{
 
 <body>
 
-<nav>
-  <h2>MyPortfolio</h2>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<header>
+  <h1>GOULRAJ P</h1>
+  <p>Aspiring Engineer exploring Embedded Systems, Data Analytics & UI/UX Design</p>
+</header>
 
-<div class="hero">
-  <h1>Hi, I'm Your Name 👋</h1>
-  <p>Frontend Developer | Learner | Student</p>
-</div>
-
-<section id="about">
+<section>
   <h2>About Me</h2>
-  <p>I am learning web development and building real projects using HTML, CSS, JS.</p>
+  <p>I am a curious learner who focuses on understanding concepts and practical learning.</p>
 </section>
 
-<section id="skills">
+<section>
   <h2>Skills</h2>
-  <div class="card-container">
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">JavaScript</div>
+  <div class="skills">
+    <div class="skill">Embedded Systems (Basic)</div>
+    <div class="skill">Data Analytics (Basic)</div>
+    <div class="skill">UI/UX Design (Basic)</div>
   </div>
 </section>
 
-<section id="projects">
+<section>
   <h2>Projects</h2>
-  <div class="card-container">
-    <div class="card">Portfolio Website</div>
-    <div class="card">Mini Calculator</div>
-    <div class="card">Landing Page</div>
+
+  <div class="project-container">
+
+    <div class="project-card">
+      <h3>Container Tracking System</h3>
+      <p>IoT-based system for real-time container tracking and monitoring.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Sensor Integration</h3>
+      <p>Worked with ESP32, GPS, gas, temperature and humidity sensors.</p>
+    </div>
+
   </div>
 </section>
 
-<section id="contact">
+<section>
   <h2>Contact</h2>
-  <p>Email: yourmail@gmail.com</p>
+  <p>Email: gokulrajp102004@gmail.com</p>
+  <p>GitHub: gokulraj2352.github.io</p>
 </section>
 
 <footer>
-  © 2026 My Portfolio
+  © 2026 GOULRAJ P
 </footer>
 
 </body>
