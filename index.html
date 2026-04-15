@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goulraj Portfolio</title>
+<title>Gokulraj Portfolio</title>
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -14,12 +13,16 @@ body{
   font-family:'Poppins', sans-serif;
   background:linear-gradient(135deg,#0f172a,#020617);
   color:white;
-  overflow-x:hidden;
 }
 
-/* ANIMATION */
+/* smooth scroll */
+html{
+  scroll-behavior:smooth;
+}
+
+/* animation */
 @keyframes fadeUp {
-  from {opacity:0; transform:translateY(30px);}
+  from {opacity:0; transform:translateY(40px);}
   to {opacity:1; transform:translateY(0);}
 }
 
@@ -37,7 +40,6 @@ body{
 
 .hero p{
   color:#cbd5e1;
-  font-size:18px;
 }
 
 /* GLASS CARD */
@@ -50,7 +52,7 @@ body{
   margin:20px auto;
   width:85%;
   max-width:700px;
-  animation:fadeUp 1.2s ease;
+  animation:fadeUp 1s ease;
 }
 
 /* SKILLS */
@@ -81,7 +83,8 @@ body{
   border:1px solid rgba(255,255,255,0.1);
   border-radius:15px;
   padding:20px;
-  transition:0.4s;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 .project-card:hover{
@@ -89,24 +92,42 @@ body{
   box-shadow:0 0 20px #38bdf8;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 12px;
-  background:#38bdf8;
-  color:black;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
+/* POPUP MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
 }
 
-/* FOOTER */
+.modal-content{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  width:85%;
+  max-width:500px;
+  position:relative;
+  animation:fadeUp 0.4s ease;
+}
+
+.close{
+  position:absolute;
+  right:10px;
+  top:10px;
+  cursor:pointer;
+  font-size:20px;
+}
+
 footer{
   text-align:center;
   padding:20px;
   background:#020617;
   color:#94a3b8;
-  margin-top:40px;
 }
 </style>
 </head>
@@ -115,7 +136,7 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <h1>GOULRAJ P</h1>
+  <h1>GOKULRAJ P</h1>
   <p>Aspiring Engineer exploring Embedded Systems, Data Analytics & UI/UX Design</p>
 </div>
 
@@ -124,8 +145,7 @@ footer{
   <h2>About Me</h2>
   <p>
     I am a curious learner who loves exploring different technologies.
-    I focus on understanding concepts deeply rather than memorizing.
-    I believe in practical, hands-on learning for real-world applications.
+    I focus on understanding concepts deeply and prefer hands-on learning.
   </p>
 </div>
 
@@ -145,16 +165,9 @@ footer{
 
   <div class="project-container">
 
-    <div class="project-card">
+    <div class="project-card" onclick="openModal()">
       <h3>Container Tracking System</h3>
-      <p>IoT-based system for real-time tracking and monitoring using sensors and GPS.</p>
-      <a class="btn" href="#">View</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Sensor Integration</h3>
-      <p>Worked with ESP32, gas, temperature, humidity and LDR sensors.</p>
-      <a class="btn" href="#">Details</a>
+      <p>Click to view full details</p>
     </div>
 
   </div>
@@ -164,13 +177,45 @@ footer{
 <div class="glass">
   <h2>Contact</h2>
   <p>Email: gokulrajp102004@gmail.com</p>
-  <p>GitHub: https://gokulraj2352.github.io/</p>
+  <p>GitHub: gokulraj2352.github.io</p>
   <p>Phone: 8778322352</p>
 </div>
 
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">❌</span>
+
+    <h2>Container Tracking System</h2>
+
+    <p>
+      IoT-based system using ESP32, GPS, Gas, Temperature, Humidity and LDR sensors.
+    </p>
+
+    <p>
+      Data is processed and sent via API to Telegram bot for real-time monitoring and alerts.
+    </p>
+
+    <p>
+      This project helps in real-time container tracking and environmental monitoring.
+    </p>
+  </div>
+</div>
+
 <footer>
-  © 2026 GOULRAJ P | Portfolio
+  © 2026 GOKULRAJ P | Portfolio
 </footer>
+
+<!-- JS -->
+<script>
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+</script>
 
 </body>
 </html>
