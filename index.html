@@ -11,8 +11,8 @@
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
-  background:linear-gradient(135deg,#0f172a,#0b1220);
-  color:white;
+  background:#0b1220;
+  color:#e2e8f0;
 }
 
 html{
@@ -27,7 +27,7 @@ html{
 
 .hero h1{
   font-size:52px;
-  color:#38bdf8;
+  color:#60a5fa;
 }
 
 .hero p{
@@ -37,17 +37,17 @@ html{
 /* SECTION */
 .section{
   width:85%;
-  max-width:800px;
-  margin:25px auto;
+  max-width:850px;
+  margin:30px auto;
 }
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:15px;
-  padding:20px;
-  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(148,163,184,0.2);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 /* SKILLS */
@@ -58,48 +58,29 @@ html{
 }
 
 .skill{
-  background:#1e293b;
+  background:#111827;
+  border:1px solid rgba(148,163,184,0.2);
   padding:8px 12px;
   border-radius:8px;
+  font-size:13px;
 }
 
 /* BUTTON */
 .btn{
   width:100%;
-  padding:15px;
-  background:#1e293b;
-  color:white;
-  border:none;
+  padding:14px;
+  background:#111827;
+  border:1px solid rgba(148,163,184,0.2);
+  color:#e2e8f0;
   border-radius:12px;
   cursor:pointer;
   text-align:left;
-  font-size:16px;
+  font-size:15px;
 }
 
 .btn:hover{
-  background:#38bdf8;
-  color:black;
-}
-
-/* CONTENT */
-.content{
-  display:none;
-  margin-top:10px;
-}
-
-/* PROJECT */
-.project{
-  padding:20px;
-  border-radius:15px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.1);
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.project:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 15px #38bdf8;
+  background:#1f2937;
+  border-color:#60a5fa;
 }
 
 /* CONTACT */
@@ -110,7 +91,8 @@ html{
 }
 
 .contact-links a{
-  background:#1e293b;
+  background:#111827;
+  border:1px solid rgba(148,163,184,0.2);
   padding:10px 12px;
   border-radius:8px;
   color:white;
@@ -118,37 +100,13 @@ html{
 }
 
 .contact-links a:hover{
-  background:#38bdf8;
-  color:black;
+  border-color:#60a5fa;
 }
 
-/* MODAL */
-.modal{
+/* CONTENT */
+.content{
   display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-box{
-  background:#1e293b;
-  padding:20px;
-  border-radius:12px;
-  width:85%;
-  max-width:500px;
-  position:relative;
-}
-
-.close{
-  position:absolute;
-  right:10px;
-  top:10px;
-  cursor:pointer;
+  margin-top:10px;
 }
 </style>
 </head>
@@ -158,30 +116,68 @@ html{
 <!-- HERO -->
 <div class="hero">
   <h1>GOKULRAJ P</h1>
-  <p>Embedded | Data Analytics | UI/UX Designer</p>
+  <p>Embedded Systems | Data Analyst | UI/UX Designer</p>
 </div>
 
 <!-- ABOUT -->
 <div class="section card">
   <h2>About Me</h2>
-  <p>I am a practical learner focused on Embedded Systems, UI/UX Design and Data Analytics.</p>
 
-  <h3>Skills</h3>
+  <p>
+    I am a passionate and practical learner who focuses on understanding concepts deeply
+    rather than memorizing theory. I enjoy exploring real-world applications in Embedded Systems,
+    Data Analytics, and UI/UX Design.
+    I believe in hands-on learning, continuous exploration, and building practical projects
+    that solve real problems.
+  </p>
+</div>
+
+<!-- SKILLS -->
+<div class="section card">
+  <h2>Skills</h2>
+
   <div class="skills">
+    <div class="skill">Excel Dashboard Creation</div>
+    <div class="skill">Python Basics</div>
+    <div class="skill">SQL Basic Level</div>
+    <div class="skill">Power BI Dashboard</div>
+    <div class="skill">Tableau Dashboard</div>
     <div class="skill">Embedded Systems</div>
-    <div class="skill">Data Analytics</div>
     <div class="skill">UI/UX Design</div>
     <div class="skill">Figma</div>
-    <div class="skill">Photoshop</div>
+    <div class="skill">Wireframing</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript Basics</div>
   </div>
 </div>
 
 <!-- PROJECT -->
-<div class="section">
-  <div class="project" onclick="openModal()">
-    <h3>📦 Container Tracking System</h3>
-    <p>Click to view project details</p>
-  </div>
+<div class="section card">
+  <h2>Project</h2>
+
+  <h3>📦 Container Tracking System (IoT Project)</h3>
+
+  <p>
+    This project is a real-time IoT-based container tracking system designed to monitor
+    environmental and security conditions inside containers.
+  </p>
+
+  <p>
+    It uses multiple sensors such as ESP32 microcontroller, GPS module for live location tracking,
+    gas sensor for leakage detection, temperature sensor, humidity sensor, and LDR sensor for light detection.
+  </p>
+
+  <p>
+    All sensor data is collected and processed through ESP32 and sent via API integration.
+    The system is connected with a Telegram Bot to provide real-time alerts instantly
+    when abnormal conditions are detected.
+  </p>
+
+  <p>
+    This project helps in improving logistics safety, monitoring cargo conditions,
+    and ensuring real-time tracking of containers efficiently.
+  </p>
 </div>
 
 <!-- INTERNSHIP -->
@@ -192,19 +188,26 @@ html{
 
   <div id="internship" class="content card">
     <p><b>Thias Company, Thanjavur</b></p>
-    <p>UI/UX Intern - 30 Days</p>
-    <p>Worked on Figma, Photoshop, wireframing and Ticket Booking App design.</p>
+    <p>UI/UX Design Intern - 30 Days</p>
+    <p>
+      Worked on real UI/UX projects using Figma and Photoshop.
+      Learned wireframing, prototyping, and designed a Ticket Booking Application UI.
+    </p>
   </div>
 </div>
 
 <!-- MASTERCLASS -->
 <div class="section">
   <button class="btn" onclick="toggle('master')">
-    🎓 Masterclass Experience
+    🎓 Masterclass (Novitech)
   </button>
 
   <div id="master" class="content card">
-    <p>Learned UI/UX basics, wireframing, Figma tools and AI portfolio creation techniques.</p>
+    <p>
+      Attended 30-day free UI/UX masterclass conducted by Novitech.
+      Learned Figma fundamentals, wireframing techniques, UI design principles,
+      and AI-based portfolio creation tools.
+    </p>
   </div>
 </div>
 
@@ -219,7 +222,7 @@ html{
   <br>
 
   <p><b>Secondary (10th)</b></p>
-  <p>Kalyana Sundaram Higher Secondary School, Thanjavur</p>
+  <p>Kalyana Sundaram Higher Secondary School</p>
   <p>Percentage: 71%</p>
 
   <br>
@@ -246,29 +249,13 @@ html{
   <p>Phone: 8778322352</p>
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeModal()">❌</span>
-    <h2>Container Tracking System</h2>
-    <p>IoT based system using sensors and GPS for real-time tracking.</p>
-  </div>
-</div>
-
 <script>
 function toggle(id){
   var x=document.getElementById(id);
   x.style.display = (x.style.display==="block")?"none":"block";
 }
-
-function openModal(){
-  document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-}
 </script>
 
 </body>
-</html>
+  </html>
+
