@@ -26,7 +26,7 @@ html{
 }
 
 .hero h1{
-  font-size:50px;
+  font-size:52px;
   color:#38bdf8;
 }
 
@@ -81,18 +81,32 @@ html{
   color:black;
 }
 
-/* CONTENT HIDE */
+/* CONTENT */
 .content{
   display:none;
   margin-top:10px;
 }
 
-/* CONTACT LINKS */
+/* PROJECT */
+.project{
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.project:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 15px #38bdf8;
+}
+
+/* CONTACT */
 .contact-links{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-top:10px;
 }
 
 .contact-links a{
@@ -106,6 +120,35 @@ html{
 .contact-links a:hover{
   background:#38bdf8;
   color:black;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-box{
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  width:85%;
+  max-width:500px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:10px;
+  top:10px;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -121,9 +164,7 @@ html{
 <!-- ABOUT -->
 <div class="section card">
   <h2>About Me</h2>
-  <p>
-    I am a practical learner focused on Embedded Systems, Data Analytics and UI/UX Design.
-  </p>
+  <p>I am a practical learner focused on Embedded Systems, UI/UX Design and Data Analytics.</p>
 
   <h3>Skills</h3>
   <div class="skills">
@@ -136,11 +177,11 @@ html{
 </div>
 
 <!-- PROJECT -->
-<div class="section card">
-  <h2>Projects</h2>
-
-  <h3>Container Tracking System</h3>
-  <p>IoT based real-time tracking using sensors and GPS.</p>
+<div class="section">
+  <div class="project" onclick="openModal()">
+    <h3>📦 Container Tracking System</h3>
+    <p>Click to view project details</p>
+  </div>
 </div>
 
 <!-- INTERNSHIP -->
@@ -159,39 +200,73 @@ html{
 <!-- MASTERCLASS -->
 <div class="section">
   <button class="btn" onclick="toggle('master')">
-    🎓 Masterclass (Novitech)
+    🎓 Masterclass Experience
   </button>
 
   <div id="master" class="content card">
-    <p>Learned UI/UX basics, wireframing, Figma tools and AI portfolio creation.</p>
+    <p>Learned UI/UX basics, wireframing, Figma tools and AI portfolio creation techniques.</p>
   </div>
 </div>
 
-<!-- CONTACT (FIXED FULL DETAILS) -->
+<!-- EDUCATION -->
+<div class="section card">
+  <h2>Education</h2>
+
+  <p><b>Higher Secondary (12th)</b></p>
+  <p>Kalyana Sundaram Higher Secondary School</p>
+  <p>Percentage: 85%</p>
+
+  <br>
+
+  <p><b>Secondary (10th)</b></p>
+  <p>Kalyana Sundaram Higher Secondary School, Thanjavur</p>
+  <p>Percentage: 71%</p>
+
+  <br>
+
+  <p><b>College</b></p>
+  <p>Government College of Engineering, Thanjavur</p>
+  <p>CGPA: 7.0 (up to 7th semester)</p>
+</div>
+
+<!-- CONTACT -->
 <div class="section card">
   <h2>Contact</h2>
 
-  <p>Reach me using below details:</p>
-
   <div class="contact-links">
-
     <a href="mailto:gokulrajp102004@gmail.com">📧 Email</a>
     <a href="tel:8778322352">📞 Call</a>
     <a href="https://gokulraj2352.github.io/" target="_blank">💻 GitHub</a>
     <a href="#">🔗 LinkedIn</a>
-
   </div>
 
   <br>
 
-  <p><b>Email:</b> gokulrajp102004@gmail.com</p>
-  <p><b>Phone:</b> 8778322352</p>
+  <p>Email: gokulrajp102004@gmail.com</p>
+  <p>Phone: 8778322352</p>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">❌</span>
+    <h2>Container Tracking System</h2>
+    <p>IoT based system using sensors and GPS for real-time tracking.</p>
+  </div>
 </div>
 
 <script>
 function toggle(id){
   var x=document.getElementById(id);
   x.style.display = (x.style.display==="block")?"none":"block";
+}
+
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
 }
 </script>
 
