@@ -11,17 +11,7 @@
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
-
-  /* 🔥 BACKGROUND IMAGE */
-  background-image:
-    linear-gradient(rgba(11,18,32,0.85), rgba(11,18,32,0.9)),
-    url("./bg.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
+  background:#0b1220;
   color:#e2e8f0;
 }
 
@@ -53,11 +43,11 @@ html{
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.05);
+  background:rgba(255,255,255,0.04);
   border:1px solid rgba(148,163,184,0.2);
   border-radius:16px;
   padding:22px;
-  backdrop-filter: blur(10px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 /* SKILLS */
@@ -112,6 +102,12 @@ html{
 .contact-links a:hover{
   border-color:#60a5fa;
 }
+
+/* CONTENT */
+.content{
+  display:none;
+  margin-top:10px;
+}
 </style>
 </head>
 
@@ -126,6 +122,7 @@ html{
 <!-- ABOUT -->
 <div class="section card">
   <h2>About Me</h2>
+
   <p>
     I am a passionate learner focused on practical understanding rather than theory.
     I enjoy Embedded Systems, Data Analytics, and UI/UX Design.
@@ -136,6 +133,7 @@ html{
 <!-- SKILLS -->
 <div class="section card">
   <h2>Skills</h2>
+
   <div class="skills">
     <div class="skill">Excel Dashboard Creation</div>
     <div class="skill">Python Basics</div>
@@ -154,6 +152,7 @@ html{
 <!-- PROJECT -->
 <div class="section card">
   <h2>Project</h2>
+
   <h3>📦 Container Tracking System (IoT Project)</h3>
 
   <p>
@@ -161,32 +160,44 @@ html{
   </p>
 
   <p>
-    Uses ESP32, GPS module, gas sensor, temperature & humidity sensors, and LDR sensor.
+    Uses ESP32 microcontroller with GPS for location tracking, gas sensor for leakage detection,
+    temperature and humidity sensors for environmental monitoring, and LDR sensor for light detection.
   </p>
 
   <p>
-    Data is processed and sent via API. Telegram bot provides real-time alerts.
+    Data is processed using ESP32 and sent via API integration. Telegram bot is used for real-time alerts
+    when abnormal conditions are detected.
   </p>
 
   <p>
-    Helps in logistics monitoring and container safety tracking.
+    This project improves logistics safety and enables real-time tracking of containers.
   </p>
 </div>
 
 <!-- INTERNSHIP -->
 <div class="section">
-  <button class="btn" onclick="toggle('internship')">💼 Internship Experience</button>
+  <button class="btn" onclick="toggle('internship')">
+    💼 Internship Experience
+  </button>
+
   <div id="internship" class="card" style="display:none; margin-top:10px;">
     <p><b>Thias Company, Thanjavur</b></p>
-    <p>UI/UX Intern - 30 Days</p>
+    <p>UI/UX Design Intern - 30 Days</p>
+    <p>Worked on Figma, Photoshop, wireframing and Ticket Booking App design.</p>
   </div>
 </div>
 
 <!-- MASTERCLASS -->
 <div class="section">
-  <button class="btn" onclick="toggle('master')">🎓 Masterclass</button>
+  <button class="btn" onclick="toggle('master')">
+    🎓 Masterclass Experience
+  </button>
+
   <div id="master" class="card" style="display:none; margin-top:10px;">
-    <p>Learned Figma, UI design, wireframing and AI tools.</p>
+    <p>
+      Attended 30-day UI/UX masterclass conducted by Novitech.
+      Learned Figma, wireframing, UI design principles and AI-based portfolio creation tools.
+    </p>
   </div>
 </div>
 
@@ -194,18 +205,22 @@ html{
 <div class="section card">
   <h2>Education</h2>
 
-  <p><b>12th</b></p>
+  <p><b>Higher Secondary (12th)</b></p>
   <p>Kalyana Sundaram Higher Secondary School, Thanjavur</p>
-  <p>85%</p>
+  <p>Percentage: 85%</p>
 
-  <p><b>10th</b></p>
+  <br>
+
+  <p><b>Secondary (10th)</b></p>
   <p>Kalyana Sundaram Higher Secondary School, Thanjavur</p>
-  <p>71%</p>
+  <p>Percentage: 71%</p>
+
+  <br>
 
   <p><b>College</b></p>
   <p>Government College of Engineering, Thanjavur</p>
-  <p>Department: Electronics and Communication Engineering</p>
-  <p>CGPA: 7.0</p>
+  <p>Department: Electronics and Communication Engineering (ECE)</p>
+  <p>CGPA: 7.0 (up to 7th semester)</p>
 </div>
 
 <!-- CONTACT -->
@@ -216,7 +231,10 @@ html{
     <a href="mailto:gokulrajp102004@gmail.com">📧 Email</a>
     <a href="tel:8778322352">📞 Call</a>
     <a href="https://gokulraj2352.github.io/" target="_blank">💻 GitHub</a>
+    <a href="#">🔗 LinkedIn</a>
   </div>
+
+  <br>
 
   <p>Email: gokulrajp102004@gmail.com</p>
   <p>Phone: 8778322352</p>
